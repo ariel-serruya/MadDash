@@ -9,7 +9,7 @@ var brake=0.0;
 var steer=0.0;
  
 var maxSteer=25.0;
- 
+
 function Start(){
     GetComponent(Rigidbody).centerOfMass=Vector3(0,-0.5,0.3);
 }
@@ -19,7 +19,7 @@ function Update () {
     steer=Input.GetAxis("Horizontal") * maxSteer;
     brake=Input.GetKey("space") ? GetComponent.<Rigidbody>().mass * 0.1: 0.0;
    
-    /*GetCollider(0).steerAngle=steer;
+    GetCollider(0).steerAngle=steer;
     GetCollider(1).steerAngle=steer;
    
     if(brake > 0.0){
@@ -36,9 +36,9 @@ function Update () {
         GetCollider(3).brakeTorque=0;
         GetCollider(2).motorTorque=power;
         GetCollider(3).motorTorque=power;
-    }*/
+    }
 }
- 
+
 function GetCollider(n : int) : WheelCollider{
     return wheels[n].gameObject.GetComponent(WheelCollider);
 }
