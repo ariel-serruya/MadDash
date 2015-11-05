@@ -1,5 +1,5 @@
 ﻿#pragma strict
-//CarController1.js
+//CarController.js
 var wheels : Transform[];
  
 var enginePower=150.0;
