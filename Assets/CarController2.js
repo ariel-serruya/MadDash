@@ -32,11 +32,11 @@ function Update () {
 
 	// set the audio pitch to the percentage of RPM to the maximum RPM plus one, this makes the sound play
 	// up to twice it's pitch, where it will suddenly drop when it switches gears.
-//	GetComponent.<AudioSource>().pitch = Mathf.Abs(EngineRPM / MaxEngineRPM) + 1.0 ;
+	GetComponent.<AudioSource>().pitch = Mathf.Abs(EngineRPM / MaxEngineRPM) + 1.0 ;
 	// this line is just to ensure that the pitch does not reach a value higher than is desired.
-//	if ( GetComponent.<AudioSource>().pitch > 2.0 ) {
-//		GetComponent.<AudioSource>().pitch = 2.0;
-//	}
+	if ( GetComponent.<AudioSource>().pitch > 2.0 ) {
+		GetComponent.<AudioSource>().pitch = 2.0;
+	}
 
 	// finally, apply the values to the wheels.	The torque applied is divided by the current gear, and
 	// multiplied by the user input variable.
