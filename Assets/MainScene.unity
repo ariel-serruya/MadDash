@@ -583,10 +583,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .400000006
+    m_ExtremumSlip: .00999999978
     m_ExtremumValue: 1
     m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .5
+    m_AsymptoteValue: .800000012
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: .200000003
@@ -608,8 +608,6 @@ GameObject:
   - 65: {fileID: 565667917}
   - 114: {fileID: 565667915}
   - 82: {fileID: 565667918}
-  - 114: {fileID: 565667919}
-  - 114: {fileID: 565667921}
   m_Layer: 0
   m_Name: CC_ME_R4
   m_TagString: Untagged
@@ -638,7 +636,7 @@ MonoBehaviour:
   - 1.13
   - .930000007
   CurrentGear: 0
-  EngineTorque: 3000
+  EngineTorque: 9000
   MaxEngineRPM: 3000
   MinEngineRPM: 1000
 --- !u!54 &565667916
@@ -738,27 +736,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &565667919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 565667914}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8da71d4b31284543bd9f2066798aaa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheels:
-  - {fileID: 1841517683}
-  - {fileID: 1235651186}
-  - {fileID: 1547664354}
-  - {fileID: 724092113}
-  enginePower: 150
-  power: 0
-  brake: 0
-  steer: 0
-  maxSteer: 25
 --- !u!95 &565667920
 Animator:
   serializedVersion: 3
@@ -777,28 +754,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &565667921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 565667914}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988c52c9765edf941861d8a574ae0b54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axleInfos:
-  - leftWheel: {fileID: 1547664358}
-    rightWheel: {fileID: 724092117}
-    motor: 1
-    steering: 1
-  - leftWheel: {fileID: 1841517687}
-    rightWheel: {fileID: 1235651188}
-    motor: 1
-    steering: 1
-  maxMotorTorque: 3000
-  maxSteeringAngle: 50
 --- !u!1 &690773986 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100056, guid: e6fec471c20b9d148b1f87910e67bea4, type: 3}
@@ -1116,10 +1071,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .400000006
+    m_ExtremumSlip: .00999999978
     m_ExtremumValue: 1
     m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .5
+    m_AsymptoteValue: .800000012
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: .200000003
@@ -1637,10 +1592,10 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .400000006
+    m_ExtremumSlip: .00999999978
     m_ExtremumValue: 1
     m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .5
+    m_AsymptoteValue: .800000012
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: .200000003
@@ -2033,11 +1988,11 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .400000006
+    m_ExtremumSlip: .00999999978
     m_ExtremumValue: 1
     m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .5
-    m_Stiffness: 1
+    m_AsymptoteValue: .800000012
+    m_Stiffness: 5
   m_SidewaysFriction:
     m_ExtremumSlip: .200000003
     m_ExtremumValue: 1
