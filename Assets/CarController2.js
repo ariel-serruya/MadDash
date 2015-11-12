@@ -12,9 +12,9 @@ var CurrentGear : int = 0;
 // These variables are just for applying torque to the wheels and shifting gears.
 // using the defined Max and Min Engine RPM, the script can determine what gear the
 // car needs to be in.
-var EngineTorque : float = 230.0;
-var MaxEngineRPM : float = 3000.0;
-var MinEngineRPM : float = 1000.0;
+var EngineTorque : float = 500.0;
+var MaxEngineRPM : float = 100000.0;
+var MinEngineRPM : float = 30000.0;
 private var EngineRPM : float = 0.0;
 
 
@@ -27,7 +27,7 @@ function Start () {
 function Update () {
 	
 	// Compute the engine RPM based on the average RPM of the two wheels, then call the shift gear function
-	EngineRPM = (FrontLeftWheel.rpm + FrontRightWheel.rpm)/2 * GearRatio[CurrentGear];
+	EngineRPM = (FrontLeftWheel.rpm + FrontRightWheel.rpm) / 2 * GearRatio[CurrentGear];
 	ShiftGears();
 
 	// set the audio pitch to the percentage of RPM to the maximum RPM plus one, this makes the sound play
@@ -44,8 +44,8 @@ function Update () {
 	FrontRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Input.GetAxis("Vertical");
 		
 	// the steer angle is an arbitrary value multiplied by the user input.
-	FrontLeftWheel.steerAngle = 10 * Input.GetAxis("Horizontal");
-	FrontRightWheel.steerAngle = 10 * Input.GetAxis("Horizontal");
+	FrontLeftWheel.steerAngle = 20 * Input.GetAxis("Horizontal");
+	FrontRightWheel.steerAngle = 20 * Input.GetAxis("Horizontal");
 	
 	//if(Input.GetKey("Mouse0") or ){
 	//}
@@ -79,4 +79,6 @@ function ShiftGears() {
 		
 		CurrentGear = AppropriateGear;
 	}
+	
+	Debug.Log(CurrentGear);
 }

@@ -645,12 +645,12 @@ MonoBehaviour:
   FrontLeftWheel: {fileID: 1214119726}
   FrontRightWheel: {fileID: 467418765}
   GearRatio:
-  - 4.30999994
-  - 2.71000004
-  - 1.88
-  - 1.40999997
-  - 1.13
-  - .930000007
+  - 1
+  - .5
+  - .25
+  - .125
+  - .0625
+  - .0375000015
   CurrentGear: 0
   EngineTorque: 7000
   MaxEngineRPM: 3000
