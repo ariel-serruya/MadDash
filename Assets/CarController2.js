@@ -46,6 +46,9 @@ function Update () {
 	// the steer angle is an arbitrary value multiplied by the user input.
 	FrontLeftWheel.steerAngle = 10 * Input.GetAxis("Horizontal");
 	FrontRightWheel.steerAngle = 10 * Input.GetAxis("Horizontal");
+	
+	//if(Input.GetKey("Mouse0") or ){
+	//}
 }
 
 function ShiftGears() {

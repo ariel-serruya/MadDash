@@ -2,26 +2,30 @@
 //CarController.js
 var wheels : Transform[];
 
-var enginePower=150.0;
+var enginePower=10.0;
  
 var power=0.0;
 var brake=0.0;
 var steer=0.0;
+var shoot=0.0;
  
-var maxSteer=25.0;
+var maxSteer=90.0;
 
 function Start(){
     GetComponent(Rigidbody).centerOfMass=Vector3(0,-0.5,0.3);
 }
  
 function Update () {
-    power=Input.GetAxis("Vertical") * enginePower * Time.deltaTime * 250.0;
+    power=Input.GetAxis("Vertical") * enginePower * Time.deltaTime * 1000.0;
     steer=Input.GetAxis("Horizontal") * maxSteer;
     brake=Input.GetKey("space") ? GetComponent.<Rigidbody>().mass * 0.1: 0.0;
    
     GetCollider(0).steerAngle=steer;
     GetCollider(1).steerAngle=steer;
    
+    if(Input.GetKey("Mouse0")){
+
+    }
     if(brake > 0.0){
         GetCollider(0).brakeTorque=brake;
         GetCollider(1).brakeTorque=brake;
