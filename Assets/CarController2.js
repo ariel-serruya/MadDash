@@ -26,6 +26,35 @@ function Start () {
 
 function Update () {
 	
+	
+	/*for (var touch : Touch in Input.touches) 
+     {
+         if (GasButton.HitTest(touch.position))
+         {
+             bBrakeButtonPressed = false;
+             bGasButtonPressed = true;
+         }
+         else if (BrakeButton.HitTest(touch.position))
+         {
+             bGasButtonPressed = false;
+             bBrakeButtonPressed = true;
+         }
+         
+         if (LeftButton.HitTest(touch.position))
+         {
+             bRightButtonPressed = false;
+             bLeftButtonPressed = true;
+         }
+         else if (RightButton.HitTest(touch.position))
+         {
+             bLeftButtonPressed = false;
+             bRightButtonPressed = true;
+         }
+     }*/
+	
+	
+	
+	
 	// Compute the engine RPM based on the average RPM of the two wheels, then call the shift gear function
 	EngineRPM = (FrontLeftWheel.rpm + FrontRightWheel.rpm) / 2 * GearRatio[CurrentGear];
 	ShiftGears();
