@@ -173,7 +173,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 13725798}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &13725803
 Behaviour:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 302317266}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &302317271
 Behaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 456205389}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &456205394
 Behaviour:
   m_ObjectHideFlags: 0
@@ -658,16 +658,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .0500000007
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .800000012
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .899999976
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: .200000003
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .5
-    m_AsymptoteValue: .75
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .699999988
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &565667914
@@ -706,14 +706,9 @@ MonoBehaviour:
   FrontLeftWheel: {fileID: 1214119726}
   FrontRightWheel: {fileID: 467418765}
   GearRatio:
-  - 1
-  - .5
-  - .25
-  - .125
-  - .0625
-  - .0375000015
+  - .100000001
   CurrentGear: 0
-  EngineTorque: 7000
+  EngineTorque: 700
   MaxEngineRPM: 3000
   MinEngineRPM: 1000
 --- !u!54 &565667916
@@ -749,7 +744,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 565667914}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 03e3bd08a6e70684dbe299a3e185fdd2, type: 3}
@@ -1066,16 +1061,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .0500000007
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .800000012
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .899999976
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: .200000003
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .5
-    m_AsymptoteValue: .75
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .699999988
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &902715577
@@ -1402,16 +1397,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .0500000007
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .800000012
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .899999976
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: .200000003
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .5
-    m_AsymptoteValue: .75
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .699999988
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &1235651183
@@ -1762,16 +1757,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: .25
   m_ForwardFriction:
-    m_ExtremumSlip: .0500000007
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .800000012
-    m_AsymptoteValue: .800000012
-    m_Stiffness: 5
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .899999976
+    m_AsymptoteValue: 1
+    m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: .200000003
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: .5
-    m_AsymptoteValue: .75
+    m_ExtremumSlip: .25
+    m_ExtremumValue: 2.5
+    m_AsymptoteSlip: .699999988
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!1 &1547664353
