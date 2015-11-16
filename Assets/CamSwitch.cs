@@ -53,7 +53,8 @@ public class CamSwitch : MonoBehaviour
 		{
 			//Can be improved in indexof or .replace this just works with the cameras being nearly the same length
 			camName = ("Current Camera: " + Camera.current);
-			camName = camName.Remove(25);
+			camName = camName.Remove(camName.Length-16);
+			//Debug.Log(camName.Length-16);
 			GUI.TextArea(new Rect(10, 10, 250, 30), camName);
 		}
 	}

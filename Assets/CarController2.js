@@ -80,5 +80,5 @@ function ShiftGears() {
 		CurrentGear = AppropriateGear;
 	}
 	
-	Debug.Log(CurrentGear);
+	//Debug.Log(CurrentGear);
 }
