@@ -1,4 +1,5 @@
-﻿// Original code from: https://dl.dropboxusercontent.com/u/16956434/Car_Tutorial_Scripts/PlayerCar_Script.js
+﻿import UnityStandardAssets.CrossPlatformInput;
+// Original code from: https://dl.dropboxusercontent.com/u/16956434/Car_Tutorial_Scripts/PlayerCar_Script.js
 
 // These variables allow the script to power the wheels of the car.
 var FrontLeftWheel : WheelCollider;
@@ -69,12 +70,12 @@ function Update () {
 
 	// finally, apply the values to the wheels.	The torque applied is divided by the current gear, and
 	// multiplied by the user input variable.
-	FrontLeftWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Input.GetAxis("Vertical");
-	FrontRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Input.GetAxis("Vertical");
+	FrontLeftWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * CrossPlatformInputManager.GetAxis("Vertical");
+	FrontRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * CrossPlatformInputManager.GetAxis("Vertical");
 		
 	// the steer angle is an arbitrary value multiplied by the user input.
-	FrontLeftWheel.steerAngle = 20 * Input.GetAxis("Horizontal");
-	FrontRightWheel.steerAngle = 20 * Input.GetAxis("Horizontal");
+	FrontLeftWheel.steerAngle = 20 * CrossPlatformInputManager.GetAxis("Horizontal");
+	FrontRightWheel.steerAngle = 20 * CrossPlatformInputManager.GetAxis("Horizontal");
 	
 	//if(Input.GetKey("Mouse0") or ){
 	//}
@@ -109,5 +110,5 @@ function ShiftGears() {
 		CurrentGear = AppropriateGear;
 	}
 	
-	//Debug.Log(CurrentGear);
+	Debug.Log(CurrentGear);
 }
