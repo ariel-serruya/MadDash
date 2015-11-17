@@ -1,5 +1,5 @@
 ﻿var projectile : Rigidbody;
-var speed = 1000000000;
+var speed = 1000;
 
 function Update () {
     if(Input.GetButtonUp("Fire1")){
