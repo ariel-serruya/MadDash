@@ -55,7 +55,7 @@ public class CamSwitch : MonoBehaviour
 			camName = ("Current Camera: " + Camera.current);
 			camName = camName.Remove(camName.Length-16);
 			//Debug.Log(camName.Length-16);
-			GUI.TextArea(new Rect(10, 10, 250, 30), camName);
+			//GUI.TextArea(new Rect(10, 10, 250, 30), camName);
 		}
 	}
 }
