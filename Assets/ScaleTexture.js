@@ -6,7 +6,7 @@ function Start() {
 }*/
 
 
-function Update () {
+function Start () {
      GetComponent.<Renderer>().material.mainTextureScale = Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
 }
 
