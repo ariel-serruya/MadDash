@@ -22,25 +22,26 @@ private var EngineRPM : float = 0.0;
 
 
 function Start () {
-    // I usually alter the center of mass to make the car more stable. I'ts less likely to flip this way.
+    // Alter the center of mass to make the car more stable. It's less likely to flip this way.
     GetComponent.<Rigidbody>().centerOfMass += Vector3(0, -.75, .25);
 }
 
 function Update () {
 
-    // Compute the engine RPM based on the average RPM of the two wheels, then call the shift gear function
-    EngineRPM = (FrontLeftWheel.rpm + FrontRightWheel.rpm) / 2 * GearRatio[CurrentGear];
+	// Compute the engine RPM based on the average RPM of the two wheels, then call the shift gear function
+	EngineRPM = (FrontLeftWheel.rpm + FrontRightWheel.rpm) / 2 * GearRatio[CurrentGear];
 
-    // finally, apply the values to the wheels.	The torque applied is divided by the current gear, and
-    // multiplied by the user input variable.
-    FrontLeftWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
-    FrontRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
-    BackLeftWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
-    BackRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
+	// finally, apply the values to the wheels.	The torque applied is divided by the current gear, and
+	// multiplied by the user input variable.
+	FrontLeftWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
+	FrontRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
+	BackLeftWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
+	BackRightWheel.motorTorque = EngineTorque / GearRatio[CurrentGear] * Mathf.Round(CrossPlatformInputManager.GetAxis("Vertical"));
 
-    // the steer angle is an arbitrary value multiplied by the user input.
-    FrontLeftWheel.steerAngle = 20 * CrossPlatformInputManager.GetAxis("Horizontal");
-    FrontRightWheel.steerAngle = 20 * CrossPlatformInputManager.GetAxis("Horizontal");
+	// the steer angle is an arbitrary value multiplied by the user input.
+	FrontLeftWheel.steerAngle = 20 * CrossPlatformInputManager.GetAxis("Horizontal");
+	FrontRightWheel.steerAngle = 20 * CrossPlatformInputManager.GetAxis("Horizontal");
+		
 }
 
 function ShiftGears() {
@@ -71,6 +72,4 @@ function ShiftGears() {
 		
         CurrentGear = AppropriateGear;
     }
-	
-    //Debug.Log(CurrentGear);
 }
