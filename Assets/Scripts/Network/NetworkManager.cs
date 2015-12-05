@@ -43,8 +43,17 @@ public class NetworkManager : MonoBehaviour
 			controls.SetActive(true);
 		#endif
 		
+		//enable movement for one player only
+		((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
 		
-		((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true; //make true and make prefab with false
+		//enable shooting for one player only
+		Transform shooter = Player.transform.Find("Shooter");
+		Transform shooter1 = shooter.transform.Find("Shooter1");
+		Transform shooter2 = shooter.transform.Find("Shooter2");
+		((MonoBehaviour)shooter1.GetComponent("ShootBullet")).enabled = true;
+		((MonoBehaviour)shooter2.GetComponent("ShootBullet")).enabled = true;
+		
+		//enable camera switch for individual player
 		Transform cameras = Player.transform.Find("Cameras");
 		((MonoBehaviour)cameras.GetComponent("CamSwitch")).enabled = true;
 		

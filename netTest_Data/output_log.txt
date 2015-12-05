@@ -21,7 +21,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.085 seconds
+- Completed reload, in  0.227 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -50,7 +50,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.064 seconds
+- Completed reload, in  0.071 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -58,7 +58,7 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 4334 -> priority: 1 
+  Thread -> id: 41a0 -> priority: 1 
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3d18 -> priority: 1 
+  Thread -> id: 3dd0 -> priority: 1 
