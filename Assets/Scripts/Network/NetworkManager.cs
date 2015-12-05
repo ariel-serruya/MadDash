@@ -8,7 +8,7 @@ public class NetworkManager : MonoBehaviour
     public string roomName = "MadDash";
     public string playerPrefab = "Car";
 	//public string controlsPrefab = "MobileSingleStickControl";
-    public Transform SpawnPoint;
+    public Transform[] SpawnPoints = new Transform[4];
 	//public RectTransform SpawnPointControls;
 	public GameObject controls;
 	public Camera initCam;
@@ -34,7 +34,9 @@ public class NetworkManager : MonoBehaviour
 
     void OnJoinedRoom()
     {
-        GameObject Player = PhotonNetwork.Instantiate(playerPrefab, SpawnPoint.position, SpawnPoint.rotation, 0);
+        GameObject Player = PhotonNetwork.Instantiate(playerPrefab, 
+				SpawnPoints[PhotonNetwork.playerList.Length - 1].position, 
+				SpawnPoints[PhotonNetwork.playerList.Length - 1].rotation, 0);
 		//PhotonNetwork.Instantiate(controlsPrefab, SpawnPointControls.position, SpawnPointControls.rotation, 0);
 		#if UNITY_IPHONE
 			controls.SetActive(true);
@@ -57,14 +59,6 @@ public class NetworkManager : MonoBehaviour
 		Transform cameras = Player.transform.Find("Cameras");
 		((MonoBehaviour)cameras.GetComponent("CamSwitch")).enabled = true;
 		
-		
-		//Disables the currently enabled camera component
-		//initCam.enabled = false;
-		//Changes camera to currentCameraIndex (the next one in the array after Update() function is called for the first time)
-		//currentCamera = cameras[currentCameraIndex];
-		//Enables the new camera component (or main camera when called from the Start() function
-		//Transform cameras = (Player.transform.Find("Cameras"));
-		//Camera cam = cameras.Find("MainCamera");
     }
 	
 	/*************************************************************************************/

@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour {
 		Invoke ("Destroy", 2f);//Destroys bullet 2 seconds after spawning. 
 	}
 	void Destroy(){
-		gameObject.SetActive(false);//We don't destroy objects, we disable them and they sit in the pool again. Creating/Destroying over and over again makes the device reallocate memory multiple times which kills the cpu.
+		//Creating/Destroying over and over again makes the device reallocate memory multiple times which kills the cpu.
+		gameObject.SetActive(false);
 	}
 	void OnDisable(){
 		CancelInvoke ();//Makes sure if the bullet is disable for another reason the invokes don't stack up.

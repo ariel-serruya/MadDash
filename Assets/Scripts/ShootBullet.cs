@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class ShootBullet : MonoBehaviour {
-	public GameObject bullet;
+	//public GameObject bullet;
 	private int PoolSize = 5;
+	private string bulletPreFab = "PlaceHolderBullet";
 	List<GameObject> bullets;
 	
 	// Use this for initialization
 	void Start () {
 		bullets = new List<GameObject> ();
 		for (int i = 0; i < PoolSize; i++) {//Creates the pool of bullets
-			GameObject b = (GameObject)Instantiate(bullet);
+			//GameObject b = (GameObject)Instantiate(bullet);
+			GameObject b = PhotonNetwork.Instantiate(bulletPreFab, transform.position, transform.rotation, 0);
 			b.SetActive(false);
 			bullets.Add(b);
 		}
