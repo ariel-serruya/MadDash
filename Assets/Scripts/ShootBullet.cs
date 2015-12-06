@@ -20,7 +20,7 @@ public class ShootBullet : MonoBehaviour {
 		}
 	}
 
-	void Update(){
+	/*void Update(){
 		if (CrossPlatformInputManager.GetButtonUp("Shoot")) {
             //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
 			Shoot ();
@@ -37,5 +37,40 @@ public class ShootBullet : MonoBehaviour {
 				break;//Breaks so we don't active every bullet when we shoot once.
 			}
 		}
+	}*/
+	
+	void Update(){
+		if (CrossPlatformInputManager.GetButtonUp("Shoot")) {
+            //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
+			Shoot ();
+		}
 	}
+	
+	//void Shoot(Vector3 bottleRocketStart, Quaternion bottleRocketRot)
+	void Shoot()
+     {
+														//was PhotonTargets.MasterClient
+         //GetComponent<PhotonView>().RPC("fireRocket_RPC", PhotonTargets.All, transform.position, Quaternion.identity, nm.teamID);
+		 GetComponent<PhotonView>().RPC("fireRocket_RPC", PhotonTargets.All, transform.position, transform.rotation);
+         //GetComponent<GetItem>().currentItem = "";
+     }
+ 
+     [PunRPC]
+	 void fireRocket_RPC(Vector3 bottleRocketStart, Quaternion bottleRocketRot)
+     //void fireRocket_RPC(Vector3 bottleRocketStart, Quaternion bottleRocketRot, int teamID)
+     {
+		for (int i = 0; i < bullets.Count; i++) {//Cycles through bullets in list
+			if(!bullets[i].activeInHierarchy){//Ensures it doesn't grab a bullet that is already active
+				bullets[i].transform.position = transform.position;//Puts bullet in correct spot
+				bullets[i].transform.rotation = transform.rotation;//Rotates bullet to match the spawner
+				bullets[i].SetActive(true);//Activates the bullet
+				break;//Breaks so we don't active every bullet when we shoot once.
+			}
+		}
+         //bottleRocket = (GameObject)Instantiate(Resources.Load("PlaceHolderBullet"), transform.position, transform.rotation);
+         //bottleRocket.GetComponent<RocketInfo>().shotByPlayer = teamID;
+     }
+	
+	
+	
 }

@@ -30,4 +30,5 @@ MonoBehaviour:
   - PunPickupSimple
   - PunRespawn
   - RequestForPickupTimes
+  - fireRocket_RPC
   DisableAutoOpenWizard: 1
