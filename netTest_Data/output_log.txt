@@ -21,39 +21,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.253 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
-<RI> Input initialized.
-<RI> Initialized touch support.
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
-Initialize engine version: 5.2.2f1 (3757309da7e7)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 5500 (ID=0x1616)
-    Vendor:   Intel
-    VRAM:     1207 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.dll into Unity Child Domain
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 5d5c -> priority: 1 
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.075 seconds
+- Completed reload, in  0.078 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -61,4 +29,4 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 503c -> priority: 1 
+  Thread -> id: 1aec -> priority: 1 
