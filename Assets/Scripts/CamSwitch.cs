@@ -28,10 +28,6 @@ public class CamSwitch : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.Escape)) {
-			Application.LoadLevel(0);
-		}
-
 		int count = Input.touchCount;
 		bool swipe = false;
 		if (count > 0) {

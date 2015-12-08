@@ -21,7 +21,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.196 seconds
+- Completed reload, in  0.240 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -50,27 +50,45 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.094 seconds
+- Completed reload, in  0.065 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 <RI> Initialized touch support.
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 764 -> priority: 1 
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1970 -> priority: 1 
+  Thread -> id: 15f0 -> priority: 1 
+Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1fa8 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.458594 ms
+UnloadTime: 2.423600 ms
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 461.
-Total: 0.262653 ms (FindLiveObjects: 0.026591 ms CreateObjectMapping: 0.020060 ms MarkObjects: 0.175413 ms  DeleteObjects: 0.040121 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 492.
+Total: 0.436667 ms (FindLiveObjects: 0.043386 ms CreateObjectMapping: 0.034989 ms MarkObjects: 0.309306 ms  DeleteObjects: 0.048518 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.454395 ms
+UnloadTime: 2.241189 ms
 
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 461.
-Total: 0.351760 ms (FindLiveObjects: 0.036388 ms CreateObjectMapping: 0.032656 ms MarkObjects: 0.232796 ms  DeleteObjects: 0.049451 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 489.
+Total: 0.332166 ms (FindLiveObjects: 0.031257 ms CreateObjectMapping: 0.021926 ms MarkObjects: 0.235595 ms  DeleteObjects: 0.042453 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.486586 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 474.
+Total: 0.644271 ms (FindLiveObjects: 0.085840 ms CreateObjectMapping: 0.043386 ms MarkObjects: 0.470724 ms  DeleteObjects: 0.041054 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.473990 ms
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 579.
+Total: 0.473523 ms (FindLiveObjects: 0.039654 ms CreateObjectMapping: 0.024259 ms MarkObjects: 0.368088 ms  DeleteObjects: 0.041520 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.452996 ms
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 474.
+Total: 0.439467 ms (FindLiveObjects: 0.033123 ms CreateObjectMapping: 0.023326 ms MarkObjects: 0.360157 ms  DeleteObjects: 0.022393 ms)
 

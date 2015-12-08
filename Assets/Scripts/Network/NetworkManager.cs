@@ -46,6 +46,10 @@ public class NetworkManager : MonoBehaviour
     }*/
 	
 	void Update(){
+		if (Input.GetKey(KeyCode.Escape)) {
+			PhotonNetwork.Disconnect();
+			Application.LoadLevel(0);
+		}
 		if (CrossPlatformInputManager.GetButtonUp("Shoot")) {
             //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
 			GameObject b1 = PhotonNetwork.Instantiate(bulletPreFab, shooter1.transform.position, shooter1.transform.rotation, 0);
