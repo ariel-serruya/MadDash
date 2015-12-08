@@ -94,11 +94,8 @@ public class NetworkManager : MonoBehaviour
 		
 		
 		//instantiate bullets here somehow??
-		
-		#if UNITY_IPHONE
-			controls.SetActive(true);
-		#endif
-		#if UNITY_ANDROID
+
+		#if !UNITY_STANDALONE
 			controls.SetActive(true);
 		#endif
 		
