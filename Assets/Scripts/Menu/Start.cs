@@ -6,4 +6,10 @@ public class Start : MonoBehaviour {
 		Application.LoadLevel(1);
 	}
 
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit();
+		}
+	}
+
 }

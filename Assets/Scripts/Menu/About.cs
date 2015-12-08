@@ -10,7 +10,14 @@ public class About : MonoBehaviour {
 
 	void OnGUI() {
 		if (show) {
-			GUI.Label (new Rect (100, 100, 100, 100), "Insert text for controls and credits here");
+			GUIStyle gui = new GUIStyle();
+			#if UNITY_STANDALONE
+				gui.fontSize = 24;
+			#else
+				gui.fontSize = 128;
+			#endif
+
+			GUI.Label (new Rect (10, 10, Screen.width, Screen.height), "Swipe from top right quarter of screen to change camera", gui);
 		}
 	}
 
