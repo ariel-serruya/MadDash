@@ -66,10 +66,9 @@ public class NetworkManager : MonoBehaviour
 		 PhotonNetwork.Destroy(b1);
 		 PhotonNetwork.Destroy(b2);
 	 }
-	
 
-	// Update is called once per frame
-	/*void Shoot () {
+    // Update is called once per frame
+    /*void Shoot () {
 		for (int i = 0; i < bullets.Count; i++) {//Cycles through bullets in list
 			if(!bullets[i].activeInHierarchy){//Ensures it doesn't grab a bullet that is already active
 				bullets[i].transform.position = Player.transform.position;//Puts bullet in correct spot

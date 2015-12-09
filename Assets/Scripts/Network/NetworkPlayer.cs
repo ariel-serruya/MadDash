@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class NetworkPlayer : Photon.MonoBehaviour {
+    public float hp = 100;
     //public GameObject myCamera;
 
-	/*public Transform transform = new Transform();
+    /*public Transform transform = new Transform();
 	private float lastSynchronizationTime = 0f;
 	private float syncDelay = 0f;
 	private float syncTime = 0f;
@@ -45,22 +46,22 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		syncTime += Time.deltaTime;
 		GetComponent<Rigidbody>().position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
 	}*/
-	
-	// Use this for initialization
-	//void Start () {
+
+    // Use this for initialization
+    //void Start () {
     //    myCamera.SetActive(true);
-	//}
-	
-	/*void Update()
+    //}
+
+    /*void Update()
     {
 		Debug.Log("working");
         if (photonView.isMine) {
             Debug.Log("It's meee");
 		}
     }*/
-	
-	// in an "observed" script:
-	/*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+
+    // in an "observed" script:
+    /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{
 		if (stream.isWriting)
 		{
@@ -73,4 +74,21 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 			stream.Serialize(ref pos);  // pos gets filled-in. must be used somewhere
 		}
 	}*/
+
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.name == "PlaceHolderBullet(Clone)")
+        {
+            hp -= 2;
+            if (hp > 0)
+            {
+                Debug.Log(" Health:" + hp);
+            }
+            if (hp <0)
+            {
+                Debug.Log("DEAD");
+            }
+        }
+    }
+
 }

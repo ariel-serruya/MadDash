@@ -9,7 +9,13 @@ public class Bullet : MonoBehaviour {
 		rigidB.velocity = transform.forward * bulletSpeed;
 		Invoke ("Destroy", 2f);//Destroys bullet 2 seconds after spawning. 
 	}
-	void Destroy(){
+    void OnCollisionEnter(Collision col)
+    {
+        Debug.Log("hit");
+        Destroy();
+        //Make blowup effect
+    }
+    void Destroy(){
 		//Creating/Destroying over and over again makes the device reallocate memory multiple times which kills the cpu.
 		gameObject.SetActive(false);
 	}
