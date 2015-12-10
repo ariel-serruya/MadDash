@@ -25,6 +25,14 @@ using System.Collections;
                 //Debug.Log("DEAD");
             }
         }
+        if(col.gameObject.name == "Health")
+        {
+            AdjustCurrentHealth(+45);
+            if(curHealth > 100)
+            {
+                curHealth = 100f;
+            }
+        }
     }    
  
      

@@ -191,6 +191,33 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 2cfa74b41ca6c51469d6411f769711b3, type: 3}
   m_PrefabInternal: {fileID: 121154680}
+--- !u!1 &146862933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 146862934}
+  m_Layer: 0
+  m_Name: HSpawnPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146862934
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146862933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -155, y: 48, z: -127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483334238}
+  m_RootOrder: 1
 --- !u!1001 &268226292
 Prefab:
   m_ObjectHideFlags: 0
@@ -274,11 +301,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: MadDash
   playerPrefab: Car
+  health: Health
   SpawnPoints:
   - {fileID: 1746293553}
   - {fileID: 1789066700}
   - {fileID: 1848166971}
   - {fileID: 99160592}
+  HealthSpawn:
+  - {fileID: 1814627198}
+  - {fileID: 146862934}
+  - {fileID: 1110601815}
   controls: {fileID: 1095279054}
   initCam: {fileID: 772554056}
 --- !u!4 &273082961
@@ -292,7 +324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &306685043
 Prefab:
   m_ObjectHideFlags: 0
@@ -445,6 +477,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.40381455, y: 6.06578493, z: 2.46603179}
   m_Center: {x: -.000182032585, y: 3.58820034e-05, z: 1.20006216}
+--- !u!1 &483334237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 483334238}
+  m_Layer: 0
+  m_Name: HealthSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483334238
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483334237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1814627198}
+  - {fileID: 146862934}
+  - {fileID: 1110601815}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1001 &550342593
 Prefab:
   m_ObjectHideFlags: 0
@@ -686,7 +748,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &927665159
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +780,7 @@ Transform:
   - {fileID: 1048189978}
   - {fileID: 376628597}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &938817430
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +840,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &986701231
 Prefab:
   m_ObjectHideFlags: 0
@@ -960,6 +1022,33 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!1 &1110601814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1110601815}
+  m_Layer: 0
+  m_Name: HSpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1110601815
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1110601814}
+  m_LocalRotation: {x: -.0974694267, y: .930601537, z: .335543245, w: .109047472}
+  m_LocalPosition: {x: 43, y: 55.5, z: 0}
+  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483334238}
+  m_RootOrder: 2
 --- !u!1001 &1121719480
 Prefab:
   m_ObjectHideFlags: 0
@@ -1198,7 +1287,34 @@ Transform:
   - {fileID: 1848166971}
   - {fileID: 99160592}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!1 &1814627197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1814627198}
+  m_Layer: 0
+  m_Name: HSpawnPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814627198
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814627197}
+  m_LocalRotation: {x: -.223058477, y: .0408899039, z: -.868694305, w: .440389901}
+  m_LocalPosition: {x: 155, y: 31, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483334238}
+  m_RootOrder: 0
 --- !u!1 &1848166970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1368,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1331,4 +1447,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6

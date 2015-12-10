@@ -10,8 +10,11 @@ public class NetworkManager : MonoBehaviour
     const string VERSION = "v4.2";
     public string roomName = "MadDash";
     public string playerPrefab = "Car";
+    public string health = "Health";
+    public static int numHealth = 3;
 	//public string controlsPrefab = "MobileSingleStickControl";
     public Transform[] SpawnPoints = new Transform[4];
+    public Transform[] HealthSpawn = new Transform[3];
 	//public RectTransform SpawnPointControls;
 	public GameObject controls;
 	public Camera initCam;
@@ -85,6 +88,16 @@ public class NetworkManager : MonoBehaviour
         Player = PhotonNetwork.Instantiate(playerPrefab, 
 				SpawnPoints[PhotonNetwork.playerList.Length - 1].position, 
 				SpawnPoints[PhotonNetwork.playerList.Length - 1].rotation, 0);
+        if(PhotonNetwork.playerList.Length == 1)
+        {
+                for(int i = 0; i < numHealth; i++)
+            {
+                Debug.Log(PhotonNetwork.playerList.Length);
+                Debug.Log("health spawned");
+                PhotonNetwork.Instantiate(health, HealthSpawn[i].position, 
+                    HealthSpawn[i].rotation, 0);
+            }
+        }
 		//PhotonNetwork.Instantiate(controlsPrefab, SpawnPointControls.position, SpawnPointControls.rotation, 0);
 		
 		
