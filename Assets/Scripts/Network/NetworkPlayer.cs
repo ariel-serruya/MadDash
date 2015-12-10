@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class NetworkPlayer : Photon.MonoBehaviour {
-    public float hp = 100;
+    //public float hp = 100;
     //public GameObject myCamera;
 
     /*public Transform transform = new Transform();
@@ -75,7 +75,7 @@ public class NetworkPlayer : Photon.MonoBehaviour {
 		}
 	}*/
 
-    void OnCollisionEnter(Collision col)
+/*    void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.name == "PlaceHolderBullet(Clone)")
         {
@@ -89,6 +89,6 @@ public class NetworkPlayer : Photon.MonoBehaviour {
                 Debug.Log("DEAD");
             }
         }
-    }
+    }*/
 
 }
