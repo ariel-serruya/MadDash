@@ -47,7 +47,8 @@ public class NetworkManager : MonoBehaviour
 	
 	void Update(){
 		if (Input.GetKey(KeyCode.Escape)) {
-			PhotonNetwork.Disconnect();
+			if (PhotonNetwork.connected)
+				PhotonNetwork.Disconnect();
 			Application.LoadLevel(0);
 		}
 		if (CrossPlatformInputManager.GetButtonUp("Shoot")) {
@@ -131,7 +132,7 @@ public class NetworkManager : MonoBehaviour
 		else if (PhotonNetwork.room == null)
 		{
 			// Create Room
-			if (GUI.Button(new Rect(100, 100, 250, 100), "Start Server")) {
+			if (GUI.Button(new Rect(300, 150, 250, 100), "Create/Join Game")) {
 				
 				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
 				PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
