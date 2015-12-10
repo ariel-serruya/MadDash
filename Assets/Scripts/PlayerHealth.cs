@@ -22,10 +22,11 @@ using System.Collections;
             }
             if (curHealth < 0)
             {
-                //Debug.Log("DEAD");
+                gameObject.SetActive(false);
             }
         }
-        if(col.gameObject.name == "Health")
+        Debug.Log(col.gameObject.name);
+        if(col.gameObject.name == "Health(Clone)")
         {
             AdjustCurrentHealth(+45);
             if(curHealth > 100)
