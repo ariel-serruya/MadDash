@@ -5,13 +5,41 @@ public class NetworkPlayer : Photon.MonoBehaviour {
     //public float hp = 100;
     //public GameObject myCamera;
 
+	 /*private Vector3 correctPlayerPos;
+     private Quaternion correctPlayerRot;
+  
+     void Update()
+     {
+         if (!photonView.isMine)
+         {
+             transform.position = Vector3.Lerp(transform.position, correctPlayerPos, Time.deltaTime * 5);
+             transform.rotation = Quaternion.Lerp(transform.rotation, correctPlayerRot, Time.deltaTime * 5);
+         }
+     }
+  
+     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+     {
+         if (stream.isWriting)
+         {
+             stream.SendNext(transform.position);
+             stream.SendNext(transform.rotation);
+  
+         }
+         else
+         {
+             correctPlayerPos = (Vector3)stream.ReceiveNext();
+             correctPlayerRot = (Quaternion)stream.ReceiveNext();
+         }
+     }*/
+	
+	
     /*public Transform transform = new Transform();
 	private float lastSynchronizationTime = 0f;
 	private float syncDelay = 0f;
 	private float syncTime = 0f;
 	private Vector3 syncStartPosition = transform.positon;
 	private Vector3 syncEndPosition = transform.position;
-	 
+	
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{
 		if (stream.isWriting)

@@ -92,8 +92,8 @@ public class NetworkManager : MonoBehaviour
         {
                 for(int i = 0; i < numHealth; i++)
             {
-                Debug.Log(PhotonNetwork.playerList.Length);
-                Debug.Log("health spawned");
+                //Debug.Log(PhotonNetwork.playerList.Length);
+                //Debug.Log("health spawned");
                 PhotonNetwork.Instantiate(health, HealthSpawn[i].position, 
                     HealthSpawn[i].rotation, 0);
             }

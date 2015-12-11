@@ -25,7 +25,7 @@ using System.Collections;
                 gameObject.SetActive(false);
             }
         }
-        Debug.Log(col.gameObject.name);
+        //Debug.Log(col.gameObject.name);
         if(col.gameObject.name == "Health(Clone)")
         {
             AdjustCurrentHealth(+45);

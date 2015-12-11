@@ -4,6 +4,28 @@ namespace UnityStandardAssets.Utility
 {
 	public class SmoothFollow : MonoBehaviour
 	{
+		public Transform target;
+		private float distance = 10f;
+		//private Quaternion zero = new Quaternion(0,0,0,0);
+		void LateUpdate()
+		{
+			//transform.LookAt(target);
+			transform.position = target.position;
+			//transform.rotation = zero;
+			//Debug.Log(transform.rotation);
+			transform.Translate(-Vector3.forward * distance);
+			transform.LookAt(target);
+		}
+	}
+}
+
+
+/*using UnityEngine;
+
+namespace UnityStandardAssets.Utility
+{
+	public class SmoothFollow : MonoBehaviour
+	{
 
 		// The target we are following
 		[SerializeField]
@@ -56,6 +78,9 @@ namespace UnityStandardAssets.Utility
 
 			// Always look at the target
 			transform.LookAt(target);
+			
+			transform.position=target.position;
+			transform.Translate(-Vector3.forward * distance);
 		}
 	}
-}
+}*/
