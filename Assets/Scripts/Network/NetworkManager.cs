@@ -19,7 +19,7 @@ public class NetworkManager : MonoBehaviour
 	public GameObject controls;
 	public Camera initCam;
 	
-	
+	private bool gameInitiated = false;
 	
 	//private int PoolSize = 5;
 	private string bulletPreFab = "PlaceHolderBullet";
@@ -32,21 +32,11 @@ public class NetworkManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		gui.normal.textColor = Color.white;
+		gui.fontSize = 36;
+		
         PhotonNetwork.ConnectUsingSettings(VERSION);
-		//GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-		/*Debug.Log(PhotonNetwork.connectionStateDetailed.ToString());
-		while (!PhotonNetwork.connected) {
-			Debug.Log("Connecting");
-		}
-		RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
-		PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);*/
     }
-
-    /*void OnJoinedLobby()
-    {
-        RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
-        PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
-    }*/
 	
 	void Update(){
 		if (Input.GetKey(KeyCode.Escape)) {
@@ -58,10 +48,8 @@ public class NetworkManager : MonoBehaviour
             //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
 			GameObject b1 = PhotonNetwork.Instantiate(bulletPreFab, shooter1.transform.position, shooter1.transform.rotation, 0);
 			GameObject b2 = PhotonNetwork.Instantiate(bulletPreFab, shooter2.transform.position, shooter2.transform.rotation, 0);
-			//Shoot ();
 			//Invoke ("Destroy", 2f);//Destroys bullet 2 seconds after spawning.	
 			StartCoroutine(Destroy(b1, b2, 2));
-			//Shoot();
 		}
 	}
 	 IEnumerator Destroy(GameObject b1, GameObject b2, float delay)
@@ -70,18 +58,14 @@ public class NetworkManager : MonoBehaviour
 		 PhotonNetwork.Destroy(b1);
 		 PhotonNetwork.Destroy(b2);
 	 }
-
-    // Update is called once per frame
-    /*void Shoot () {
-		for (int i = 0; i < bullets.Count; i++) {//Cycles through bullets in list
-			if(!bullets[i].activeInHierarchy){//Ensures it doesn't grab a bullet that is already active
-				bullets[i].transform.position = Player.transform.position;//Puts bullet in correct spot
-				bullets[i].transform.rotation = Player.transform.rotation;//Rotates bullet to match the spawner
-				bullets[i].SetActive(true);//Activates the bullet
-				break;//Breaks so we don't active every bullet when we shoot once.
-			}
-		}
-	}*/
+	 
+	 IEnumerator Disconnect(float delay)
+	 {
+		 yield return new WaitForSeconds(delay);
+		 if (PhotonNetwork.connected)
+				PhotonNetwork.Disconnect();
+		 Application.LoadLevel(0);
+	 }
 
     void OnJoinedRoom()
     {
@@ -92,32 +76,20 @@ public class NetworkManager : MonoBehaviour
         {
                 for(int i = 0; i < numHealth; i++)
             {
-                //Debug.Log(PhotonNetwork.playerList.Length);
-                //Debug.Log("health spawned");
                 PhotonNetwork.Instantiate(health, HealthSpawn[i].position, 
                     HealthSpawn[i].rotation, 0);
             }
-        }
-		//PhotonNetwork.Instantiate(controlsPrefab, SpawnPointControls.position, SpawnPointControls.rotation, 0);
-		
-		
-		/*bullets = new List<GameObject> ();
-		for (int i = 0; i < PoolSize; i++) {//Creates the pool of bullets
-			//GameObject b = (GameObject)Instantiate(bullet);
-			GameObject b = PhotonNetwork.Instantiate(bulletPreFab, transform.position, transform.rotation, 0);
-			b.SetActive(false);
-			bullets.Add(b);
-		}*/
-		
-		
-		//instantiate bullets here somehow??
+		}
 
 		#if !UNITY_STANDALONE
 			controls.SetActive(true);
 		#endif
 		
-		//enable movement for one player only
-		((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
+		//enable camera switch for individual player
+		Transform cameras = Player.transform.Find("Cameras");
+		((MonoBehaviour)cameras.GetComponent("CamSwitch")).enabled = true;
+		
+		
 		
 		//enable shooting for one player only
 		Transform shooter = Player.transform.Find("Shooter");
@@ -126,16 +98,15 @@ public class NetworkManager : MonoBehaviour
 		//((MonoBehaviour)shooter1.GetComponent("ShootBullet")).enabled = true;
 		//((MonoBehaviour)shooter2.GetComponent("ShootBullet")).enabled = true;
 		
-		//enable camera switch for individual player
-		Transform cameras = Player.transform.Find("Cameras");
-		((MonoBehaviour)cameras.GetComponent("CamSwitch")).enabled = true;
-		
     }
 	
 	/*************************************************************************************/
 	
-	private RoomInfo[] roomsList;
-	 
+	//private RoomInfo[] roomsList;
+	//private int numRooms = 0;
+	private GUIStyle gui = new GUIStyle();
+	private string myRoom;
+	
 	void OnGUI()
 	{
 		if (!PhotonNetwork.connected)
@@ -144,31 +115,56 @@ public class NetworkManager : MonoBehaviour
 		}
 		else if (PhotonNetwork.room == null)
 		{
+			GUI.Label (new Rect (20, 20, Screen.width, Screen.height), "GAME LOBBY", gui);
 			// Create Room
-			if (GUI.Button(new Rect(300, 150, 250, 100), "Create/Join Game")) {
-				
-				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
-				PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
-				// in the "plain api", call lbClient.JoinOrCreateRoom() accordingly
-				
-					//PhotonNetwork.CreateRoom(roomName+roomsList.Length+1, roomOptions, TypedLobby.Default);
-					//PhotonNetwork.CreateRoom(roomName + Guid.NewGuid().ToString("N"), true, true, 5);
+			if (GUI.Button(new Rect(150, 100, 250, 60), "Solo?")) {
+				myRoom = roomName+"1Player";
+				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 1 };
+				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
 			}
-	 
+			if (GUI.Button(new Rect(150, 170, 250, 60), "Create/Join 2 Player Game")) {
+				myRoom = roomName+"2Player";
+				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
+				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);		
+				//PhotonNetwork.CreateRoom(roomName+(numRooms), roomOptions, TypedLobby.Default);
+				//numRooms++;
+			}
+			if (GUI.Button(new Rect(150, 240, 250, 60), "Create/Join 3 Player Game")) {
+				myRoom = roomName+"3Player";
+				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 3 };
+				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
+			}
+			if (GUI.Button(new Rect(150, 310, 250, 60), "Create/Join 4 Player Game")) {
+				myRoom = roomName+"4Player";
+				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
+				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);
+			}
+			
+			/*Debug.Log(roomsList);
 			// Join Room
 			if (roomsList != null)
 			{
+				Debug.Log(roomsList.Length);
 				for (int i = 0; i < roomsList.Length; i++)
-				{
+				{Debug.Log("2");
 					if (GUI.Button(new Rect(100, 250 + (110 * i), 250, 100), "Join " + roomsList[i].name))
 						PhotonNetwork.JoinRoom(roomsList[i].name);
 				}
-			}
+			}*/
+		} else if ( myRoom != null && (myRoom[7]) == (PhotonNetwork.playerList.Length).ToString()[0] ) {
+			//enable movement for one player only
+			((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
+			gameInitiated = true;
+		} else if (gameInitiated) {
+			GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "Someone Quit", gui);
+			StartCoroutine(Disconnect(2));
+		} else {
+			GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "WAITING FOR OTHER PLAYERS", gui);
 		}
 	}
 	 
-	void OnReceivedRoomListUpdate()
+	/*void OnReceivedRoomListUpdate()
 	{
 		roomsList = PhotonNetwork.GetRoomList();
-	}
+	}*/
 }
