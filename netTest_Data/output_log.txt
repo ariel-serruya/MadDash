@@ -21,7 +21,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.153 seconds
+- Completed reload, in  0.124 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -29,10 +29,42 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1bd4 -> priority: 1 
+  Thread -> id: 1f4c -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.448557 ms
+UnloadTime: 4.191732 ms
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 648.
-Total: 0.528573 ms (FindLiveObjects: 0.065780 ms CreateObjectMapping: 0.059248 ms MarkObjects: 0.345695 ms  DeleteObjects: 0.056916 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 641.
+Total: 0.503381 ms (FindLiveObjects: 0.052250 ms CreateObjectMapping: 0.037322 ms MarkObjects: 0.354092 ms  DeleteObjects: 0.058315 ms)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1496)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1649)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1496)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1649)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1649)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1496)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1649)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1649)
 
