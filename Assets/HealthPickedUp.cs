@@ -10,8 +10,10 @@ public class HealthPickedUp : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         //Debug.Log("hit");
-        Destroy();
-        //Make blowup effect
+        if (col.gameObject.name == "Car(Clone)")
+        { 
+            Destroy();
+        }
     }
     void Destroy()
     {

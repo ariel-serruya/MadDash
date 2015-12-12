@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: wrench_diffuse
+  m_Shader: {fileID: 4800000, guid: 0062aba703085e3458af1f8b2e495a07, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 8312cf1814c6e7b4db9ffe109080941c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: b169683a67890e74d94cd64b4b8660f2, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Detail
+        second:
+          m_Texture: {fileID: 2800000, guid: 8312cf1814c6e7b4db9ffe109080941c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 828e75f1e200bcf43a990ac5ead3e3ed, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .126613528
+      data:
+        first:
+          name: _RimPower
+        second: 5.25961542
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .514925361, g: .514925361, b: .514925361, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .99253732, g: .955502331, b: .955502331, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .0759634525, g: .141970977, b: .164179087, a: 0}
