@@ -20,6 +20,9 @@ Credits:
 
 	Car Controller code before modification:
 		https://dl.dropboxusercontent.com/u/16956434/Car_Tutorial_Scripts/PlayerCar_Script.js
+	
+	Wrench Model for the health kit
+		https://www.assetstore.unity3d.com/en/#!/content/21148
 		
 	Tutorial that had heavy influence on implementation of networking:
 		http://www.paladinstudios.com/2014/05/08/how-to-create-an-online-multiplayer-game-with-photon-unity-networking/
