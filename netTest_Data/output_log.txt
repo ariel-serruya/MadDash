@@ -21,7 +21,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.124 seconds
+- Completed reload, in  0.280 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -29,42 +29,34 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1f4c -> priority: 1 
+  Thread -> id: 1704 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.191732 ms
+UnloadTime: 2.902722 ms
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 641.
-Total: 0.503381 ms (FindLiveObjects: 0.052250 ms CreateObjectMapping: 0.037322 ms MarkObjects: 0.354092 ms  DeleteObjects: 0.058315 ms)
+Total: 0.599485 ms (FindLiveObjects: 0.048518 ms CreateObjectMapping: 0.053650 ms MarkObjects: 0.426404 ms  DeleteObjects: 0.069978 ms)
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1496)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.571960 ms
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1649)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 517.
+Total: 0.501515 ms (FindLiveObjects: 0.037788 ms CreateObjectMapping: 0.032656 ms MarkObjects: 0.405877 ms  DeleteObjects: 0.024725 ms)
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1496)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.422672 ms
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1649)
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 765.
+Total: 0.797758 ms (FindLiveObjects: 0.152553 ms CreateObjectMapping: 0.044319 ms MarkObjects: 0.556098 ms  DeleteObjects: 0.041520 ms)
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1649)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.808022 ms
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1496)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 517.
+Total: 1.316068 ms (FindLiveObjects: 0.137158 ms CreateObjectMapping: 0.080242 ms MarkObjects: 1.014693 ms  DeleteObjects: 0.082108 ms)
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1649)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.392348 ms
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1649)
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 765.
+Total: 0.472590 ms (FindLiveObjects: 0.041054 ms CreateObjectMapping: 0.030324 ms MarkObjects: 0.362956 ms  DeleteObjects: 0.038255 ms)
 

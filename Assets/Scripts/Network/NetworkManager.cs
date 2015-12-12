@@ -123,7 +123,7 @@ public class NetworkManager : MonoBehaviour
 				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
 			}
 			if (GUI.Button(new Rect(150, 170, 250, 60), "Create/Join 2 Player Game")) {
-				myRoom = roomName+"2Player";
+				myRoom = roomName+"2PlayerKD"; //TODO remove the extra
 				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
 				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);		
 				//PhotonNetwork.CreateRoom(roomName+(numRooms), roomOptions, TypedLobby.Default);
@@ -164,7 +164,11 @@ public class NetworkManager : MonoBehaviour
 			GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "WAITING FOR OTHER PLAYERS", gui);
 		}
 	}
-	 
+	
+	public GameObject getPlayer() {
+		return Player;
+	}
+	
 	/*void OnReceivedRoomListUpdate()
 	{
 		roomsList = PhotonNetwork.GetRoomList();

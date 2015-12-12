@@ -11,19 +11,24 @@ public class PlayerHealth : MonoBehaviour
     public Texture2D foreground;//Allows you to place a texture in the inspector
     public Texture2D bgPic;//Allows you to place a texture in, in the inspector
 
+	public float getHealth() {
+		return curHealth;
+	}
+	
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name == "PlaceHolderBullet(Clone)")
         {
-                #if !UNITY_STANDALONE
-				    Handheld.Vibrate(); //should probably make this a main menu choice
-                #endif
+            #if !UNITY_STANDALONE
+			   Handheld.Vibrate(); //should probably make this a main menu choice
+            #endif
             if (curHealth > 0)
             {
                 //Debug.Log(" Health:" + curHealth);
                 AdjustCurrentHealth(-2);
             }
-            if (curHealth <= 0)
+			//curHealth <= 0 does not work since it would get called for all cars in game and health is not synced
+            if (GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer().GetComponent<PlayerHealth>().getHealth() <= 0 ) 
             {
                 //gameObject.SetActive(false);
 
@@ -42,16 +47,16 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (col.gameObject.name == "Car(Clone)")
         {
-                #if !UNITY_STANDALONE
-				    Handheld.Vibrate();
-                #endif
+            #if !UNITY_STANDALONE
+			    Handheld.Vibrate();
+            #endif
         }
     }
 
     IEnumerator GameOver(float delay)
     {
         yield return new WaitForSeconds(delay);
-        PhotonNetwork.Destroy(gameObject);
+		PhotonNetwork.Destroy(GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer());
     }
 
 
@@ -66,13 +71,17 @@ public class PlayerHealth : MonoBehaviour
         AdjustCurrentHealth(0); // Calls appon AddjustCurHealth function to update the health.
     }
 
+	private GameObject temp;
     void OnGUI()// set up for working with items in the GUI
     {
-        GUI.DrawTexture(new Rect(30, 10, Screen.width / 5, 30), background);
+		temp = GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer();
+		if (temp != null && temp.GetComponent<PlayerHealth>().getHealth() > 0 ) {
+			GUI.DrawTexture(new Rect(30, 10, Screen.width / 5, 30), background);
 
-        GUI.DrawTexture(new Rect(30, 10, healthBarLength, 30), foreground, ScaleMode.StretchToFill);
+			GUI.DrawTexture(new Rect(30, 10, healthBarLength, 30), foreground, ScaleMode.StretchToFill);
 
-        GUI.DrawTexture(new Rect(30, 10, Screen.width / 5, 30), bgPic);
+			GUI.DrawTexture(new Rect(30, 10, Screen.width / 5, 30), bgPic);
+		}
 
     }
 

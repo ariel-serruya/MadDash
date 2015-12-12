@@ -80,7 +80,6 @@ GameObject:
   - 114: {fileID: 11426112}
   - 114: {fileID: 11412486}
   - 136: {fileID: 13664458}
-  - 114: {fileID: 11491742}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -329,17 +328,6 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
---- !u!114 &11491742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412f91f2d9121224a82563f561db6be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &13664458
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -379,6 +367,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Radius
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
