@@ -31,4 +31,5 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupTimes
   - fireRocket_RPC
+  - numPlayersDecrement
   DisableAutoOpenWizard: 1

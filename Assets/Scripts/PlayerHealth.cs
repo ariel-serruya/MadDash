@@ -55,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator GameOver(float delay)
     {
+		GameObject.Find("Managers").GetComponent<NetworkManager>().playerDied();
         yield return new WaitForSeconds(delay);
 		PhotonNetwork.Destroy(GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer());
     }

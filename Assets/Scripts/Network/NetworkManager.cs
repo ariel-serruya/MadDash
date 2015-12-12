@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ public class NetworkManager : MonoBehaviour
 	//public RectTransform SpawnPointControls;
 	public GameObject controls;
 	public Camera initCam;
-	
+	private int numAlivePlayers = -1;
 	private bool gameInitiated = false;
 	
 	//private int PoolSize = 5;
@@ -154,15 +154,34 @@ public class NetworkManager : MonoBehaviour
 		} else if ( myRoom != null && (myRoom[7]) == (PhotonNetwork.playerList.Length).ToString()[0] ) {
 			//enable movement for one player only
 			if (Player != null) {
-				((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
+				if (!gameInitiated) {
+					((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
+					numAlivePlayers = PhotonNetwork.playerList.Length;
+				}
 				gameInitiated = true;
+				if (numAlivePlayers == 1 && Player.GetComponent<PlayerHealth>().getHealth() > 0) {
+					GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "You won!", gui);
+				}
 			}
+			
 		} else if (gameInitiated) {
 			GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "Someone Quit", gui);
 			StartCoroutine(Disconnect(2));
 		} else {
 			GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "WAITING FOR OTHER PLAYERS", gui);
 		}
+	}
+	
+	public void playerDied() {
+		//Debug.Log("trying to call RPC");
+		GetComponent<PhotonView>().RPC("numPlayersDecrement",PhotonTargets.All);
+	}
+	
+	[PunRPC]
+	void numPlayersDecrement()
+	{
+		//Debug.Log("RPC called");
+		numAlivePlayers--;
 	}
 	
 	public GameObject getPlayer() {
