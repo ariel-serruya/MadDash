@@ -1,91 +1,100 @@
 ﻿using UnityEngine;
 using System.Collections;
- 
- public class PlayerHealth : MonoBehaviour {
-     
-     public float maxHealth = 100f;//The max health of the player.
-     public float curHealth = 100f;// The current health of the player this number will be altered by the code to respond with damage and health packs.
-     private float healthBarLength;//The length of the health bar.
-     public Texture2D background; // Allows you to place a texture in the Inspector
-     public Texture2D foreground;//Allows you to place a texture in the inspector
-     public Texture2D bgPic;//Allows you to place a texture in, in the inspector
- 
-     void OnCollisionEnter(Collision col)
+
+public class PlayerHealth : MonoBehaviour
+{
+
+    public float maxHealth = 100f;//The max health of the player.
+    public float curHealth = 100f;// The current health of the player this number will be altered by the code to respond with damage and health packs.
+    private float healthBarLength;//The length of the health bar.
+    public Texture2D background; // Allows you to place a texture in the Inspector
+    public Texture2D foreground;//Allows you to place a texture in the inspector
+    public Texture2D bgPic;//Allows you to place a texture in, in the inspector
+
+    void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.name == "PlaceHolderBullet(Clone)")
+        if (col.gameObject.name == "PlaceHolderBullet(Clone)")
         {
+                #if !UNITY_STANDALONE
+				Handheld.Vibrate(); //should probably make this a main menu choice
+                #endif
             if (curHealth > 0)
             {
                 //Debug.Log(" Health:" + curHealth);
-				AdjustCurrentHealth(-2);
+                AdjustCurrentHealth(-2);
             }
             if (curHealth <= 0)
             {
                 //gameObject.SetActive(false);
-				
-				GetComponent<Rigidbody>().velocity = new Vector3(0, 50, 0);
-				GetComponent<Rigidbody>().angularVelocity = new Vector3(20, 0, 20);
-				StartCoroutine(GameOver(3));
+
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 50, 0);
+                GetComponent<Rigidbody>().angularVelocity = new Vector3(20, 0, 20);
+                StartCoroutine(GameOver(3));
             }
         }
-        //Debug.Log(col.gameObject.name);
-        if(col.gameObject.name == "Health(Clone)")
+        else if (col.gameObject.name == "Health(Clone)")
         {
             AdjustCurrentHealth(+45);
-            if(curHealth > 100)
+            if (curHealth > 100)
             {
                 curHealth = 100f;
             }
         }
+        else if (col.gameObject.name == "Car(Clone)")
+        {
+                #if !UNITY_STANDALONE
+				Handheld.Vibrate();
+                #endif
+        }
     }
-	
-	 IEnumerator GameOver(float delay)
-	 {
-		 yield return new WaitForSeconds(delay);
-		 PhotonNetwork.Destroy(gameObject);
-	 }
- 
-     
-     void Start () // Use this for initialization, when the game stats what is displayed here will be loaded.
-     {
-         healthBarLength = Screen.width / 2; // The healthBarLength will be 1/2 the screens width.
-     }
-     
-     
-     void Update () // Update is called once per frame, to update information we are sending and receving.
-     {
-         AdjustCurrentHealth(0); // Calls appon AddjustCurHealth function to update the health.
-     }
-     
-     void OnGUI()// set up for working with items in the GUI
-     {
-         GUI.DrawTexture(new Rect(30, 10, Screen.width/5, 30), background);
-         
-         GUI.DrawTexture(new Rect(30, 10, healthBarLength, 30), foreground, ScaleMode.StretchToFill);
-         
-         GUI.DrawTexture(new Rect(30, 10,Screen.width/5, 30), bgPic);
-         
-     }
-     
-     public void AdjustCurrentHealth(int adj)//This function will allows us to alter our current health outside this script.
-     {
-         
-         curHealth += adj;//This is to recieve heals or dammage to the CurHealth.  The number is passed in then assigned to curHealth.
-         
-         if(curHealth < 0)//Checks if the players health has gone below 0.
-             curHealth = 0;// If players health has gone below 0 set it to 0.
-         
-         if(curHealth> maxHealth)//Checks if player health is higher then maxHealth.
-             curHealth = maxHealth;//If players health is higher then maxHealth set it = to maxHeatlh
-         
-         if(maxHealth <1)//Checks if maxHealth is set to less then 1.
-             maxHealth = 1;//If maxHealth is set below 1, this sets it to 1.
-         
-         healthBarLength = (Screen.width /5) * (curHealth / (float)maxHealth); // The full length of the bar * % of cur health.
-         
-     }
-     
- }
+
+    IEnumerator GameOver(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PhotonNetwork.Destroy(gameObject);
+    }
+
+
+    void Start() // Use this for initialization, when the game stats what is displayed here will be loaded.
+    {
+        healthBarLength = Screen.width / 2; // The healthBarLength will be 1/2 the screens width.
+    }
+
+
+    void Update() // Update is called once per frame, to update information we are sending and receving.
+    {
+        AdjustCurrentHealth(0); // Calls appon AddjustCurHealth function to update the health.
+    }
+
+    void OnGUI()// set up for working with items in the GUI
+    {
+        GUI.DrawTexture(new Rect(30, 10, Screen.width / 5, 30), background);
+
+        GUI.DrawTexture(new Rect(30, 10, healthBarLength, 30), foreground, ScaleMode.StretchToFill);
+
+        GUI.DrawTexture(new Rect(30, 10, Screen.width / 5, 30), bgPic);
+
+    }
+
+    public void AdjustCurrentHealth(int adj)//This function will allows us to alter our current health outside this script.
+    {
+
+        curHealth += adj;//This is to recieve heals or dammage to the CurHealth.  The number is passed in then assigned to curHealth.
+
+        if (curHealth < 0)//Checks if the players health has gone below 0.
+            curHealth = 0;// If players health has gone below 0 set it to 0.
+
+        if (curHealth > maxHealth)//Checks if player health is higher then maxHealth.
+            curHealth = maxHealth;//If players health is higher then maxHealth set it = to maxHeatlh
+
+        if (maxHealth < 1)//Checks if maxHealth is set to less then 1.
+            maxHealth = 1;//If maxHealth is set below 1, this sets it to 1.
+
+        healthBarLength = (Screen.width / 5) * (curHealth / (float)maxHealth); // The full length of the bar * % of cur health.
+
+    }
+
+}
 
 /*using UnityEngine;
 using System.Collections;
