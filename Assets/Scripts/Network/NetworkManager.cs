@@ -11,7 +11,7 @@ public class NetworkManager : MonoBehaviour
     public string roomName = "MadDash";
     public string playerPrefab = "Car";
     public string health = "Health";
-    public static int numHealth = 3;
+    public static int numHealth = 2;
 	//public string controlsPrefab = "MobileSingleStickControl";
     public Transform[] SpawnPoints = new Transform[4];
     public Transform[] HealthSpawn = new Transform[3];
