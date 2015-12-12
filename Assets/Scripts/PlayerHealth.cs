@@ -14,6 +14,9 @@ using System.Collections;
     {
         if(col.gameObject.name == "PlaceHolderBullet(Clone)")
         {
+			#if !UNITY_STANDALONE
+				Handheld.Vibrate(); //should probably make this a main menu choice
+			#endif
             if (curHealth > 0)
             {
                 //Debug.Log(" Health:" + curHealth);
@@ -27,16 +30,16 @@ using System.Collections;
 				GetComponent<Rigidbody>().angularVelocity = new Vector3(20, 0, 20);
 				StartCoroutine(GameOver(3));
             }
-        }
-        //Debug.Log(col.gameObject.name);
-        if(col.gameObject.name == "Health(Clone)")
-        {
-            AdjustCurrentHealth(+45);
-            if(curHealth > 100)
-            {
-                curHealth = 100f;
-            }
-        }
+		} else if (col.gameObject.name == "Health(Clone)") {
+			AdjustCurrentHealth (+45);
+			if (curHealth > 100) {
+				curHealth = 100f;
+			}
+		} else if (col.gameObject.name == "Car(Clone)") {
+			#if !UNITY_STANDALONE
+				Handheld.Vibrate();
+			#endif
+		}
     }
 	
 	 IEnumerator GameOver(float delay)
