@@ -123,7 +123,7 @@ public class NetworkManager : MonoBehaviour
 				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
 			}
 			if (GUI.Button(new Rect(150, 170, 250, 60), "Create/Join 2 Player Game")) {
-				myRoom = roomName+"2Player"; //TODO remove the extra
+				myRoom = roomName+"2Player";
 				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
 				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);		
 				//PhotonNetwork.CreateRoom(roomName+(numRooms), roomOptions, TypedLobby.Default);
