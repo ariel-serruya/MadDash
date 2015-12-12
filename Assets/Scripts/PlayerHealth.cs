@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
         if (col.gameObject.name == "PlaceHolderBullet(Clone)")
         {
                 #if !UNITY_STANDALONE
-				Handheld.Vibrate(); //should probably make this a main menu choice
+				    Handheld.Vibrate(); //should probably make this a main menu choice
                 #endif
             if (curHealth > 0)
             {
@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
         else if (col.gameObject.name == "Car(Clone)")
         {
                 #if !UNITY_STANDALONE
-				Handheld.Vibrate();
+				    Handheld.Vibrate();
                 #endif
         }
     }
@@ -98,7 +98,6 @@ public class PlayerHealth : MonoBehaviour
 
 /*using UnityEngine;
 using System.Collections;
-
  public class PlayerHealth : MonoBehaviour {
  
      public int maxHealth = 100;
