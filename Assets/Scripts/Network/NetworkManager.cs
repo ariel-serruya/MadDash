@@ -39,12 +39,12 @@ public class NetworkManager : MonoBehaviour
     }
 	
 	void Update(){
-		if (Input.GetKey(KeyCode.Escape)) {
+		if (Input.GetKey(KeyCode.Escape)) { ///    add: && Player != null ??? prevent quit after death?
 			if (PhotonNetwork.connected)
 				PhotonNetwork.Disconnect();
 			Application.LoadLevel(0);
 		}
-		if (CrossPlatformInputManager.GetButtonUp("Shoot")) {
+		if (CrossPlatformInputManager.GetButtonUp("Shoot") && Player != null) {
             //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
 			GameObject b1 = PhotonNetwork.Instantiate(bulletPreFab, shooter1.transform.position, shooter1.transform.rotation, 0);
 			GameObject b2 = PhotonNetwork.Instantiate(bulletPreFab, shooter2.transform.position, shooter2.transform.rotation, 0);
@@ -153,8 +153,10 @@ public class NetworkManager : MonoBehaviour
 			}*/
 		} else if ( myRoom != null && (myRoom[7]) == (PhotonNetwork.playerList.Length).ToString()[0] ) {
 			//enable movement for one player only
-			((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
-			gameInitiated = true;
+			if (Player != null) {
+				((MonoBehaviour)Player.GetComponent("CarController2")).enabled = true;
+				gameInitiated = true;
+			}
 		} else if (gameInitiated) {
 			GUI.Label (new Rect (20, 40, Screen.width, Screen.height), "Someone Quit", gui);
 			StartCoroutine(Disconnect(2));

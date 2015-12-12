@@ -14,15 +14,18 @@ using System.Collections;
     {
         if(col.gameObject.name == "PlaceHolderBullet(Clone)")
         {
-            //hp -= 2;
             if (curHealth > 0)
             {
                 //Debug.Log(" Health:" + curHealth);
 				AdjustCurrentHealth(-2);
             }
-            if (curHealth < 0)
+            if (curHealth <= 0)
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+				
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 50, 0);
+				GetComponent<Rigidbody>().angularVelocity = new Vector3(20, 0, 20);
+				StartCoroutine(GameOver(3));
             }
         }
         //Debug.Log(col.gameObject.name);
@@ -34,7 +37,13 @@ using System.Collections;
                 curHealth = 100f;
             }
         }
-    }    
+    }
+	
+	 IEnumerator GameOver(float delay)
+	 {
+		 yield return new WaitForSeconds(delay);
+		 PhotonNetwork.Destroy(gameObject);
+	 }
  
      
      void Start () // Use this for initialization, when the game stats what is displayed here will be loaded.

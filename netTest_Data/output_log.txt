@@ -21,7 +21,7 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.255 seconds
+- Completed reload, in  0.603 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -29,40 +29,14 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2684 -> priority: 1 
+  Thread -> id: 14ac -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.518100 ms
+UnloadTime: 73.898590 ms
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 645.
-Total: 0.328903 ms (FindLiveObjects: 0.034989 ms CreateObjectMapping: 0.019127 ms MarkObjects: 0.233731 ms  DeleteObjects: 0.041054 ms)
+Total: 0.660133 ms (FindLiveObjects: 0.067179 ms CreateObjectMapping: 0.041520 ms MarkObjects: 0.468858 ms  DeleteObjects: 0.080708 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.003745 ms
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 490.
-Total: 0.505718 ms (FindLiveObjects: 0.046652 ms CreateObjectMapping: 0.032657 ms MarkObjects: 0.401215 ms  DeleteObjects: 0.024726 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.619324 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 490.
-Total: 0.446002 ms (FindLiveObjects: 0.027991 ms CreateObjectMapping: 0.032190 ms MarkObjects: 0.380221 ms  DeleteObjects: 0.005131 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.591799 ms
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 743.
-Total: 1.790074 ms (FindLiveObjects: 0.155820 ms CreateObjectMapping: 0.083042 ms MarkObjects: 1.443909 ms  DeleteObjects: 0.105902 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.388392 ms
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 490.
-Total: 0.653141 ms (FindLiveObjects: 0.051784 ms CreateObjectMapping: 0.025659 ms MarkObjects: 0.545373 ms  DeleteObjects: 0.028924 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.225573 ms
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 743.
-Total: 0.891071 ms (FindLiveObjects: 0.092372 ms CreateObjectMapping: 0.040121 ms MarkObjects: 0.704926 ms  DeleteObjects: 0.052717 ms)
+Ev Destroy Failed. Could not find PhotonView with instantiationId 1001. Sent by actorNr: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
