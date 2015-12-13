@@ -30,7 +30,8 @@ public class PlayerHealth : MonoBehaviour
                 AdjustCurrentHealth(-2);
             }
 			//curHealth <= 0 does not work since it would get called for all cars in game and health is not synced
-            if (!isDead && GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer().GetComponent<PlayerHealth>().getHealth() <= 0 ) 
+            if (!isDead && GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer() != null &&
+					GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer().GetComponent<PlayerHealth>().getHealth() <= 0 ) 
             {
                 //gameObject.SetActive(false);
 				isDead = true;
