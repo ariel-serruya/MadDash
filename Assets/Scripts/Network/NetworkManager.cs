@@ -102,12 +102,17 @@ public class NetworkManager : MonoBehaviour
 		
     }
 	
+	void OnPhotonJoinRoomFailed() {
+		roomHasSpace[(int)char.GetNumericValue(myRoom[7])-1] = false;
+	}
+	
 	/*************************************************************************************/
 	
 	//private RoomInfo[] roomsList;
 	//private int numRooms = 0;
 	private GUIStyle gui = new GUIStyle();
 	private string myRoom;
+	private bool[] roomHasSpace = { true, true, true, true };
 	
 	void OnGUI()
 	{
@@ -119,27 +124,43 @@ public class NetworkManager : MonoBehaviour
 		{
 			GUI.Label (new Rect (20, 20, Screen.width, Screen.height), "GAME LOBBY", gui);
 			// Create Room
-			if (GUI.Button(new Rect(150, 100, 250, 60), "Solo?")) {
-				myRoom = roomName+"1Player";
-				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 1 };
-				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
+			if (roomHasSpace[0]) {
+				if (GUI.Button(new Rect(150, 100, 250, 60), "Solo?")) {
+					myRoom = roomName+"1Player";
+					RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 1 };
+					PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
+				}
+			} else {
+				GUI.Label (new Rect (155, 110, Screen.width, Screen.height), "Game is full", gui);
 			}
-			if (GUI.Button(new Rect(150, 170, 250, 60), "Create/Join 2 Player Game")) {
-				myRoom = roomName+"2Player";
-				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
-				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);		
-				//PhotonNetwork.CreateRoom(roomName+(numRooms), roomOptions, TypedLobby.Default);
-				//numRooms++;
+			if (roomHasSpace[1]) {
+				if (GUI.Button(new Rect(150, 170, 250, 60), "Create/Join 2 Player Game")) {
+					myRoom = roomName+"2Player";
+					RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
+					PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);		
+					//PhotonNetwork.CreateRoom(roomName+(numRooms), roomOptions, TypedLobby.Default);
+					//numRooms++;
+				}
+			} else {
+				GUI.Label (new Rect (155, 180, Screen.width, Screen.height), "Game is full", gui);
 			}
-			if (GUI.Button(new Rect(150, 240, 250, 60), "Create/Join 3 Player Game")) {
-				myRoom = roomName+"3Player";
-				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 3 };
-				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
+			if (roomHasSpace[2]) {
+				if (GUI.Button(new Rect(150, 240, 250, 60), "Create/Join 3 Player Game")) {
+					myRoom = roomName+"3Player";
+					RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 3 };
+					PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
+				}
+			} else {
+				GUI.Label (new Rect (155, 250, Screen.width, Screen.height), "Game is full", gui);
 			}
-			if (GUI.Button(new Rect(150, 310, 250, 60), "Create/Join 4 Player Game")) {
-				myRoom = roomName+"4Player";
-				RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
-				PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);
+			if (roomHasSpace[3]) {
+				if (GUI.Button(new Rect(150, 310, 250, 60), "Create/Join 4 Player Game")) {
+					myRoom = roomName+"4Player";
+					RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 4 };
+					PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);
+				}
+			} else {
+				GUI.Label (new Rect (155, 320, Screen.width, Screen.height), "Game is full", gui);
 			}
 			
 			/*Debug.Log(roomsList);

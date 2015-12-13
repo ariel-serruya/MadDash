@@ -290,7 +290,6 @@ GameObject:
   - 114: {fileID: 11403558}
   - 65: {fileID: 6541208}
   - 114: {fileID: 11463568}
-  - 81: {fileID: 8163664}
   - 82: {fileID: 8233064}
   m_Layer: 0
   m_Name: Car
@@ -909,13 +908,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.20000005, y: 1.5, z: 7}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!81 &8163664
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191064}
-  m_Enabled: 1
 --- !u!82 &8233064
 AudioSource:
   m_ObjectHideFlags: 1

@@ -457,6 +457,7 @@ GameObject:
   - 114: {fileID: 273082960}
   - 114: {fileID: 273082962}
   - 82: {fileID: 273082963}
+  - 81: {fileID: 273082964}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -596,6 +597,13 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!81 &273082964
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273082959}
+  m_Enabled: 1
 --- !u!1 &319575483
 GameObject:
   m_ObjectHideFlags: 0
