@@ -11,7 +11,9 @@ public class HealthPickedUp : MonoBehaviour {
     {
         //Debug.Log("hit");
         if (col.gameObject.name == "Car(Clone)")
-        { 
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
             Destroy();
         }
     }

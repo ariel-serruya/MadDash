@@ -48,8 +48,10 @@ public class NetworkManager : MonoBehaviour
             //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
 			GameObject b1 = PhotonNetwork.Instantiate(bulletPreFab, shooter1.transform.position, shooter1.transform.rotation, 0);
 			GameObject b2 = PhotonNetwork.Instantiate(bulletPreFab, shooter2.transform.position, shooter2.transform.rotation, 0);
-			//Invoke ("Destroy", 2f);//Destroys bullet 2 seconds after spawning.	
-			StartCoroutine(Destroy(b1, b2, 2));
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            //Invoke ("Destroy", 2f);//Destroys bullet 2 seconds after spawning.	
+            StartCoroutine(Destroy(b1, b2, 2));
 		}
 	}
 	 IEnumerator Destroy(GameObject b1, GameObject b2, float delay)

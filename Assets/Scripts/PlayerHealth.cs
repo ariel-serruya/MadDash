@@ -50,6 +50,8 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (col.gameObject.name == "Car(Clone)")
         {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
             #if !UNITY_STANDALONE
 			    Handheld.Vibrate();
             #endif
