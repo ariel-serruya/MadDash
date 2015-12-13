@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public Texture2D foreground;//Allows you to place a texture in the inspector
     public Texture2D bgPic;//Allows you to place a texture in, in the inspector
 
+	private bool isDead = false;
+	
 	public float getHealth() {
 		return curHealth;
 	}
@@ -28,10 +30,10 @@ public class PlayerHealth : MonoBehaviour
                 AdjustCurrentHealth(-2);
             }
 			//curHealth <= 0 does not work since it would get called for all cars in game and health is not synced
-            if (GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer().GetComponent<PlayerHealth>().getHealth() <= 0 ) 
+            if (!isDead && GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer().GetComponent<PlayerHealth>().getHealth() <= 0 ) 
             {
                 //gameObject.SetActive(false);
-
+				isDead = true;
                 GetComponent<Rigidbody>().velocity = new Vector3(0, 50, 0);
                 GetComponent<Rigidbody>().angularVelocity = new Vector3(20, 0, 20);
                 StartCoroutine(GameOver(3));
