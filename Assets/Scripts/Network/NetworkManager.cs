@@ -46,7 +46,7 @@ public class NetworkManager : MonoBehaviour
 				PhotonNetwork.Disconnect();
 			Application.LoadLevel(0);
 		}
-		if (CrossPlatformInputManager.GetButtonUp("Fire1") && Player != null && Player.GetComponent<PlayerHealth>().getNumMeteors() >=  2) {
+		if (CrossPlatformInputManager.GetButtonUp("Fire1") && Player != null && Player.GetComponent<PlayerHealth>().getNumMeteors() >=  3) {
 			
 			/*public float thrust;
 	public Vector3 Dir;
@@ -166,7 +166,7 @@ public class NetworkManager : MonoBehaviour
 			// Create Room
 			if (roomHasSpace[0]) {
 				if (GUI.Button(new Rect(150, 100, 250, 60), "Solo?")) {
-					myRoom = roomName+"1Player";
+					myRoom = roomName+"1Player"+Random.Range(1, 99);
 					RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 1 };
 					PhotonNetwork.JoinOrCreateRoom(myRoom, roomOptions, TypedLobby.Default);			
 				}
@@ -249,6 +249,13 @@ public class NetworkManager : MonoBehaviour
 	
 	public GameObject getPlayer() {
 		return Player;
+	}
+	
+	public void meteorStorm() {
+		Time.timeScale = 1f;
+		GameObject fx = PhotonNetwork.Instantiate("MeteorSwarm", new Vector3(0,0,0), Quaternion.identity, 0);
+		Player.GetComponent<PlayerHealth>().resetMeteors();
+		StartCoroutine(DestroyFX(fx, 10));
 	}
 	
 	/*void OnReceivedRoomListUpdate()

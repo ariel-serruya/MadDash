@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (col.gameObject.name == "Health(Clone)")
         {
-            AdjustCurrentHealth(+45);
+            AdjustCurrentHealth(+25);
             if (curHealth > 100)
             {
                 curHealth = 100f;
