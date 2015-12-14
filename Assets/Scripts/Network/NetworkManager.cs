@@ -11,10 +11,13 @@ public class NetworkManager : MonoBehaviour
     public string roomName = "MadDash";
     public string playerPrefab = "Car";
     public string health = "Health";
+	public string meteor = "Health1";//"Meteor";
+	public static int numMeteors = 2;
     public static int numHealth = 2;
 	//public string controlsPrefab = "MobileSingleStickControl";
     public Transform[] SpawnPoints = new Transform[4];
-    public Transform[] HealthSpawn = new Transform[3];
+    public Transform[] HealthSpawn = new Transform[2];
+	public Transform[] MeteorSpawn = new Transform[2];
 	//public RectTransform SpawnPointControls;
 	public GameObject controls;
 	public Camera initCam;
@@ -28,7 +31,6 @@ public class NetworkManager : MonoBehaviour
 	private Transform shooter1;
 	private Transform shooter2;
 	
-
     // Use this for initialization
     void Start()
     {
@@ -44,7 +46,33 @@ public class NetworkManager : MonoBehaviour
 				PhotonNetwork.Disconnect();
 			Application.LoadLevel(0);
 		}
-		if (CrossPlatformInputManager.GetButtonUp("Shoot") && Player != null) {
+		if (CrossPlatformInputManager.GetButtonUp("Fire1") && Player != null && Player.GetComponent<PlayerHealth>().getNumMeteors() >=  2) {
+			
+			/*public float thrust;
+	public Vector3 Dir;
+	private Rigidbody rb;
+	private ParticleSystem Ps;
+	public GameObject FxPrefabLOW, FxPrefabHIGH;
+	public GameObject Anim;*/Time.timeScale = 1f;
+		
+	//Rigidbody rb;MeshRenderer mh;Vector3 Dir = shooter1.transform.position;//new Vector3(0, 0, 0);
+			//Debug.Log("create fire");
+			
+
+			GameObject fx = PhotonNetwork.Instantiate("MeteorSwarm", new Vector3(0,0,0), Quaternion.identity, 0);
+			Player.GetComponent<PlayerHealth>().resetMeteors();
+			//fx.transform.localScale += new Vector3(3F, 3F, 3F);
+			//fx.transform.parent = this.gameObject.transform;
+			//fx.transform.localPosition = Vector3.zero;
+			//fx.transform.localRotation = Quaternion.Euler(320,-90,0);
+			//rb = fx.GetComponent<Rigidbody>();
+			//mh = fx.GetComponent<MeshRenderer>();
+			//mh.enabled = true;
+			//rb.AddForce(Dir * 2);//thrust);
+			//DESTROY FIRE!
+			StartCoroutine(DestroyFX(fx, 10));
+		}
+		if (CrossPlatformInputManager.GetButtonUp("Shoot") && Player != null) {	
             //Should really have a seperate event listener that manages everything. Avoiding using the update function is always good.
 			GameObject b1 = PhotonNetwork.Instantiate(bulletPreFab, shooter1.transform.position, shooter1.transform.rotation, 0);
 			GameObject b2 = PhotonNetwork.Instantiate(bulletPreFab, shooter2.transform.position, shooter2.transform.rotation, 0);
@@ -54,6 +82,12 @@ public class NetworkManager : MonoBehaviour
             StartCoroutine(Destroy(b1, b2, 2));
 		}
 	}
+	 IEnumerator DestroyFX(GameObject fx, float delay)
+	 {
+		 yield return new WaitForSeconds(delay);
+		 PhotonNetwork.Destroy(fx);
+	 }
+	 
 	 IEnumerator Destroy(GameObject b1, GameObject b2, float delay)
 	 {
 		 yield return new WaitForSeconds(delay);
@@ -77,10 +111,16 @@ public class NetworkManager : MonoBehaviour
         if(PhotonNetwork.playerList.Length == 1)
         {
                 for(int i = 0; i < numHealth; i++)
-            {
-                PhotonNetwork.Instantiate(health, HealthSpawn[i].position, 
-                    HealthSpawn[i].rotation, 0);
-            }
+				{
+					PhotonNetwork.Instantiate(health, HealthSpawn[i].position, 
+						HealthSpawn[i].rotation, 0);
+				}
+				for(int i = 0; i < numMeteors; i++)
+				{
+					PhotonNetwork.Instantiate(meteor, MeteorSpawn[i].position, 
+						MeteorSpawn[i].rotation, 0);
+				}
+				
 		}
 
 		#if !UNITY_STANDALONE

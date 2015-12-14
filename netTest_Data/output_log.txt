@@ -1,54 +1,4 @@
-Initialize engine version: 5.2.1f1 (44735ea161b3)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 5500 (ID=0x1616)
-    Vendor:   Intel
-    VRAM:     1207 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.082 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
-<RI> Input initialized.
-<RI> Initialized touch support.
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2bf4 -> priority: 1 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.190337 ms
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 567.
-Total: 0.407743 ms (FindLiveObjects: 0.030790 ms CreateObjectMapping: 0.027058 ms MarkObjects: 0.294844 ms  DeleteObjects: 0.054116 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.517376 ms
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 510.
-Total: 1.543733 ms (FindLiveObjects: 0.078376 ms CreateObjectMapping: 0.026125 ms MarkObjects: 1.373451 ms  DeleteObjects: 0.063447 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.455329 ms
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 690.
-Total: 0.504314 ms (FindLiveObjects: 0.043386 ms CreateObjectMapping: 0.037788 ms MarkObjects: 0.378818 ms  DeleteObjects: 0.043853 ms)
-
-Initialize engine version: 5.2.1f1 (44735ea161b3)
+Initialize engine version: 5.2.2f1 (3757309da7e7)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -79,10 +29,14 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2e68 -> priority: 1 
+  Thread -> id: 17a8 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.327496 ms
+UnloadTime: 2.380213 ms
 
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 567.
-Total: 0.418473 ms (FindLiveObjects: 0.050384 ms CreateObjectMapping: 0.028924 ms MarkObjects: 0.285980 ms  DeleteObjects: 0.052717 ms)
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 580.
+Total: 0.406343 ms (FindLiveObjects: 0.033589 ms CreateObjectMapping: 0.026125 ms MarkObjects: 0.285980 ms  DeleteObjects: 0.060181 ms)
+
+Operation failed: OperationResponse 226: ReturnCode: 32765 (Game full). Parameters: {} Server: MasterServer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 

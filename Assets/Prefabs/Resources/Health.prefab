@@ -389,7 +389,7 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 1
+  synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
@@ -421,7 +421,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: synchronization
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ObservedComponents.Array.data[0]

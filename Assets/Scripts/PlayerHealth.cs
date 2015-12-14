@@ -12,14 +12,23 @@ public class PlayerHealth : MonoBehaviour
     public Texture2D bgPic;//Allows you to place a texture in, in the inspector
 
 	private bool isDead = false;
+	private int numMeteors = 0;
 	
 	public float getHealth() {
 		return curHealth;
 	}
 	
+	public int getNumMeteors() {
+		return numMeteors;
+	}
+	public void resetMeteors() {
+		numMeteors = 0;
+	}
+	
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "PlaceHolderBullet(Clone)")
+		
+        if (col.gameObject.name == "PlaceHolderBullet(Clone)" || col.gameObject.name == "Meteor(Clone)")
         {
             #if !UNITY_STANDALONE
 			   Handheld.Vibrate(); //should probably make this a main menu choice
@@ -27,7 +36,10 @@ public class PlayerHealth : MonoBehaviour
             if (curHealth > 0)
             {
                 //Debug.Log(" Health:" + curHealth);
-                AdjustCurrentHealth(-2);
+				if (col.gameObject.name == "PlaceHolderBullet(Clone)")
+					AdjustCurrentHealth(-2);
+				else
+					AdjustCurrentHealth(-30);
             }
 			//curHealth <= 0 does not work since it would get called for all cars in game and health is not synced
             if (!isDead && GameObject.Find("Managers").GetComponent<NetworkManager>().getPlayer() != null &&
@@ -48,6 +60,9 @@ public class PlayerHealth : MonoBehaviour
                 curHealth = 100f;
             }
         }
+		else if (col.gameObject.name == "MeteorPickup(Clone)") {
+			numMeteors += 1;
+		}
         else if (col.gameObject.name == "Car(Clone)")
         {
             AudioSource audio = GetComponent<AudioSource>();

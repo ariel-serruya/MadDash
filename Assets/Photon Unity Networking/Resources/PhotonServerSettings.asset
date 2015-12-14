@@ -32,4 +32,5 @@ MonoBehaviour:
   - RequestForPickupTimes
   - fireRocket_RPC
   - numPlayersDecrement
+  - meteorStorm
   DisableAutoOpenWizard: 1
