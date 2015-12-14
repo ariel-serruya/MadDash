@@ -1,38 +1,37 @@
 # MadDash
 You want to play this
 
+Team Members:
+	Kevin Dorosh
+	Kevin Liu
+	Ben Machlin
+	Jordan Kemp
+	Ariel Serruya
+
 Goal of the game:
 Best your pals in a frenzied car duel!
 
 Tested Platforms:
-Android
-PC Standalone
+	Android
+	PC Standalone
 
-They can play together on the same network
-Controls for each platform are in the menu
+Both platforms can play together on the same network
+
+Controls for each platform are in the menu under "About"
+
+To run the game, either run the .exe executable (PC 
+Standalone) or download the .apk and install on your
+android device. 
+
+Menu.unity should be the starting scene
+
+This transitions to our other scene, MainScene.unity,
+where the game lobby and game itself runs
+
+Extra credit:
+	Cloud Networking
+	Particle effects (menu smoke and meteor explosions)
+	Multiple cameras (change view on car camera)
 
 Credits:
-
-	Scripts:
-
-	Health bar code before modification:
-		http://answers.unity3d.com/questions/306447/c-health-bar.html
-
-	Car Controller code before modification:
-		https://dl.dropboxusercontent.com/u/16956434/Car_Tutorial_Scripts/PlayerCar_Script.js
-	
-	Wrench Model for the health kit
-		https://www.assetstore.unity3d.com/en/#!/content/21148
-		
-	Tutorial that had heavy influence on implementation of networking:
-		http://www.paladinstudios.com/2014/05/08/how-to-create-an-online-multiplayer-game-with-photon-unity-networking/
-	
-	
-	Assets:
-	
-	Low Poly Sports Car:
-		https://www.assetstore.unity3d.com/en/#!/content/12133
-		
-		
-		
-	As well as numerous other Unity Standard Assets and Scripts (MobileStickControl, Cameras, etc.)
+	See third-party.txt
