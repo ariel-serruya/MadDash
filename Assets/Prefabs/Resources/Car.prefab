@@ -1166,6 +1166,10 @@ MonoBehaviour:
   EngineTorque: 700
   MaxEngineRPM: 3000
   MinEngineRPM: 1000
+  stuckTimer: 0
+  stuckThreshold: .5
+  stuckTimeThreshold: 400
+  rb: {fileID: 5458546}
 --- !u!114 &11483946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1351,6 +1355,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Mute
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 5458546}
+    - target: {fileID: 0}
+      propertyPath: stuckTimeThreshold
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

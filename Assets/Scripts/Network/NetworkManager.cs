@@ -12,7 +12,7 @@ public class NetworkManager : MonoBehaviour
     public string playerPrefab = "Car";
     public string health = "Health";
 	public string meteor = "Health1";//"Meteor";
-	public static int numMeteors = 2;
+	public static int numMeteors = 3;
     public static int numHealth = 2;
 	//public string controlsPrefab = "MobileSingleStickControl";
     public Transform[] SpawnPoints = new Transform[4];
