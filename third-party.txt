@@ -1,3 +1,6 @@
+Unity itself:
+	UNITY FREE, VERSION 3.5
+
 Scripts:
 
 	Health bar code before modification:
@@ -6,19 +9,47 @@ Scripts:
 
 	Car Controller code before modification:
 		https://dl.dropboxusercontent.com/u/16956434/Car_Tutorial_Scripts/PlayerCar_Script.js
-	
-	Wrench Model for the health kit
-		https://www.assetstore.unity3d.com/en/#!/content/21148
+			US Copyright Fair Use
 		
 	Tutorial that had heavy influence on implementation of networking:
 		http://www.paladinstudios.com/2014/05/08/how-to-create-an-online-multiplayer-game-with-photon-unity-networking/
+			No license needed, tutorial was for code licensed to me (free) from Unity Asset Store (PUN)
+		
+	The Networking itself (PUN):
+		https://www.assetstore.unity3d.com/en/#!/content/1786
+			Exit Games: Free Edition
 	
+	Numerous Unity Standard Scripts:
+		Unity License/Attribution: The Initial Developer Grant
 	
 Assets:
+
+	We are bound by the Unity Terms and Asset Store Guidelines,
+	which basically say:
+	
+	You can NOT re-distribute the file, no matter how much you
+	modify it you can use it but not share or re-sell it.
 	
 	Low Poly Sports Car:
 		https://www.assetstore.unity3d.com/en/#!/content/12133
 		
+	Wrench Model for the health kit
+		https://www.assetstore.unity3d.com/en/#!/content/21148
 		
+	Fire and Meteor Assets/Initial Code:
+		https://www.assetstore.unity3d.com/en/#!/content/36825
 		
-	As well as numerous other Unity Standard Assets and Scripts (MobileStickControl, Cameras, etc.)
+	White smoke asset for main menu:
+		https://www.assetstore.unity3d.com/en/#!/content/20404
+
+	Pavement textures pack:
+		https://www.assetstore.unity3d.com/en/#!/content/12952
+		
+	Containers:
+		https://www.assetstore.unity3d.com/en/#!/content/6493
+		
+	Numerous Unity Standard Assets:
+		Unity License/Attribution: The Initial Developer Grant
+		
+	City image (menu background):
+		http://wallpaperswide.com/street_hdr-wallpapers.html

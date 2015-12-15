@@ -10,6 +10,8 @@ Team Members:
 
 Goal of the game:
 Best your pals in a frenzied car duel!
+Last car standing wins. Watch that health
+closely!
 
 Tested Platforms:
 	Android
