@@ -53,3 +53,13 @@ Assets:
 		
 	City image (menu background):
 		http://wallpaperswide.com/street_hdr-wallpapers.html
+
+Sounds:
+
+	http://www.playonloop.com/2015-music-loops/time-attack/
+		menu music
+			CC-BY 3.0 Attribution license creative commons
+
+	Ben Machlin made in game music
+
+	Asset store provided other sound effects (from packages mentioned above)

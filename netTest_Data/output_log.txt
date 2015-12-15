@@ -21,56 +21,30 @@ Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
 Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.139 seconds
+- Completed reload, in  0.115 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-Initialize engine version: 5.2.2f1 (3757309da7e7)
-GfxDevice: creating device client; threaded=1
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: Intel(R) HD Graphics 5500 (ID=0x1616)
-    Vendor:   Intel
-    VRAM:     1207 MB
-Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll (this message is harmless)
-Loading C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
-Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.086 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initializing input.
-XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
-<RI> Input initialized.
-<RI> Initialized touch support.
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2d54 -> priority: 1 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.249817 ms
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 577.
-Total: 0.551899 ms (FindLiveObjects: 0.040121 ms CreateObjectMapping: 0.032190 ms MarkObjects: 0.402145 ms  DeleteObjects: 0.076976 ms)
-
 Platform assembly: C:\Users\Kevin\Documents\GitHub\MadDash\netTest_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 17ac -> priority: 1 
+  Thread -> id: 3340 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.603679 ms
+UnloadTime: 2.999759 ms
 
 Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 577.
-Total: 0.438067 ms (FindLiveObjects: 0.034056 ms CreateObjectMapping: 0.027991 ms MarkObjects: 0.308839 ms  DeleteObjects: 0.066246 ms)
+Total: 0.411009 ms (FindLiveObjects: 0.035455 ms CreateObjectMapping: 0.024725 ms MarkObjects: 0.295777 ms  DeleteObjects: 0.054116 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.605083 ms
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 543.
+Total: 0.452529 ms (FindLiveObjects: 0.026125 ms CreateObjectMapping: 0.032656 ms MarkObjects: 0.371354 ms  DeleteObjects: 0.021926 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.394680 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 543.
+Total: 0.420339 ms (FindLiveObjects: 0.029391 ms CreateObjectMapping: 0.033589 ms MarkObjects: 0.351760 ms  DeleteObjects: 0.005131 ms)
 

@@ -59,14 +59,23 @@ public class PlayerHealth : MonoBehaviour
             {
                 curHealth = 100f;
             }
+			
+			AudioSource audio = GetComponent<AudioSource>();
+			if (!audio.isPlaying) {
+				audio.Play();
+			}
         }
 		else if (col.gameObject.name == "MeteorPickup(Clone)") {
 			numMeteors += 1;
 		}
         else if (col.gameObject.name == "Car(Clone)")
         {
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+			//currentObjContainer.transform.Find("obj_Prefab").gameObject;
+            AudioSource audio = transform.Find("CarVisuals").GetComponent<AudioSource>();
+			if (!audio.isPlaying) {
+				audio.Play();
+			}
+            
             #if !UNITY_STANDALONE
 			    Handheld.Vibrate();
             #endif
